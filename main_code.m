@@ -156,13 +156,11 @@ iz = round(Nx/2); %z-plane (middle)
 
 U_slice = sqrt(u_if(:,:,iz).^2 + v_if(:,:,iz).^2 + w_if(:,:,iz).^2);
 
-U_tile = [U_slice, U_slice, U_slice];
-
-x_tile = linspace(0, 3*L, 3*Nx); 
+x_tile = linspace(0, L, Nx); 
 y_tile = linspace(0, L,   Nx);  
 
 figure(2);
-imagesc(x_tile, y_tile, U_tile);
+imagesc(x_tile, y_tile, U_slice);
 set(gca, 'YDir', 'normal');
 axis equal tight
 colormap(jet);
@@ -188,13 +186,11 @@ iz = round(Nx/2); %z-plane (middle)
 
 P_slice = sqrt(p_num(:,:,iz).^2);
 
-P_tile = [P_slice, P_slice, P_slice];
-
-x_tile = linspace(0, 3*L, 3*Nx); 
+x_tile = linspace(0, L, Nx); 
 y_tile = linspace(0, L,   Nx);  
 
 figure(4);
-imagesc(x_tile, y_tile, P_tile);
+imagesc(x_tile, y_tile, P_slice);
 set(gca, 'YDir', 'normal');
 axis equal tight
 colormap(jet);
